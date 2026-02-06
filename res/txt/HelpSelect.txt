@@ -1,10 +1,32 @@
-CREATE TABLE <tableName> CONTENT <columns>
+SELECT <columns> FROM <table>
 
-Description : Create a new table in the database named tableName and with columns entered as parameter.
+Description : Display the table keeping only columns entered as parameter.
+
+Possible options :
+	- SELECT <columns> FROM <table> INTO <tableName> -> Save the result in a new table named as tableName in the database and display it.
+
+
 
 Usage example : 
 
-CREATE TABLE table1 CONTENT id name age 
-
 Table name : table1 
 | id  |  name  | age 
+|  1  |  John  | 35 
+|  2  |  Paul  | 48 
+|  3  |  Carl  | 15 
+
+SELECT name age FROM table1
+
+Table name : table1 
+|  name  | age 
+|  John  | 35 
+|  Paul  | 48 
+|  Carl  | 15 
+
+SELECT id age FROM table1 INTO table2
+
+Table name : table2
+| id  | age 
+|  1  | 35 
+|  2  | 48 
+|  3  | 15 

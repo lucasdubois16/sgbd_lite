@@ -1,0 +1,10 @@
+CREATE TABLE <tableName> CONTENT <columns>
+
+Description : Create a new table in the database named tableName and with columns entered as parameter.
+
+Usage example : 
+
+CREATE TABLE table1 CONTENT id name age 
+
+Table name : table1 
+| id  |  name  | age 
