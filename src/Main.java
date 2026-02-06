@@ -1,4 +1,3 @@
-import java.lang.ref.Cleaner.Cleanable;
 import java.util.Scanner; 
 
 public class Main{
@@ -19,14 +18,10 @@ public class Main{
         String[] values6 = new String[]{"6","Bottas","77"};
         table1.addRow(values6);
 
-
-
         Table[] tablesdb1 = new Table[]{table1};
         Database db1 = new Database(tablesdb1);
 
         System.out.println("Table : " + table1.name + "\n" + table1.toString());
-
-
         
         Scanner scanner = new Scanner(System.in);
         CommandProcessor cp = new CommandProcessor();
@@ -44,26 +39,20 @@ public class Main{
 
             if (tokens[0].equalsIgnoreCase("quit") || tokens[0].equalsIgnoreCase("exit")){
                 System.out.println("Thanks for using.");
+                break;
             }else if(tokens[0].equalsIgnoreCase("help")){
                 if (tokens.length == 1){
                     System.out.println("Available commands : SELECT, CREATE TABLE. Type HELP <command> to get details of a command.");
                 }else if (tokens[1].equalsIgnoreCase("select")){
                     fh.clearScreen();
                     fh.readFile("../res/txt/HelpSelect.txt");
+                }else {
+                    System.out.println("Command not found : " + tokens[1]);
                 }
                 
             }else {
                 cp.process(tokens, db1);
             }
-
-
-            
         }
-
-
-        
-        
-        
-        
     }
 }

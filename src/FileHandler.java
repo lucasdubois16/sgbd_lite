@@ -24,8 +24,8 @@ public class FileHandler {
     public  void clearScreen() {
         //Fake clear screen for compatibility reasons
         for (int i = 0; i < 40; i++) {
-        System.out.println();
-    }
+            System.out.println();
+        }
     }
 }
 
